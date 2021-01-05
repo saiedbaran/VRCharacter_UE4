@@ -49065,8 +49065,10 @@
       <e p=".gitignore" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
+        <e p="DefaultEditorSettings.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
         <e p="DefaultGame.ini" t="Include" />
+        <e p="DefaultInput.ini" t="Include" />
         <e p="steamvr_ue_editor_app.json" t="Include" />
         <e p="SteamVRBindings" t="Include">
           <e p="gamepad.json" t="Include" />
@@ -49109,12 +49111,14 @@
       <e p="Source" t="Include">
         <e p="VRCharacter" t="Include">
           <e p="Private" t="Include">
+            <e p="PickupActor.cpp" t="Include" />
             <e p="VRCharacterBase.cpp" t="Include" />
             <e p="VRHandAnimationInstance.cpp" t="Include" />
             <e p="VRHandMotionController.cpp" t="Include" />
           </e>
           <e p="Public" t="Include">
             <e p="InteractableInterface.h" t="Include" />
+            <e p="PickupActor.h" t="Include" />
             <e p="VRCharacterBase.h" t="Include" />
             <e p="VRCharacterStatics.h" t="Include" />
             <e p="VRHandAnimationInstance.h" t="Include" />

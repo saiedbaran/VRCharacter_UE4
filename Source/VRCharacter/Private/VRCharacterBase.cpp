@@ -64,6 +64,15 @@ void AVRCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAxis("GrabAxisLeft", this, &AVRCharacterBase::UpdateGripStatLeft);
 }
 
+void AVRCharacterBase::PostRegisterAllComponents()
+{
+	Super::PostRegisterAllComponents();
+
+	// There is a bug when I activate these two
+	//RightHand->Initialization();
+	//LeftHand->Initialization();
+}
+
 void AVRCharacterBase::OnGrabRight()
 {
 	if (bDebugGrabAction)

@@ -30,12 +30,12 @@ UVRHandMotionController::UVRHandMotionController()
 
 	HandPivot = CreateDefaultSubobject<UStaticMeshComponent>(*FString::Printf(TEXT("HandPivot %s"), *this->GetName()));
 	HandPivot->SetupAttachment(MotionController);
-	HandPivot->SetWorldScale3D(FVector(0.01));
 	HandPivot->SetCollisionObjectType(ECC_WorldDynamic);
 	HandPivot->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 	HandPivot->SetCollisionResponseToAllChannels(ECR_Overlap);
 	HandPivot->SetGenerateOverlapEvents(false);
 	HandPivot->SetMobility(EComponentMobility::Movable);
+	HandPivot->SetHiddenInGame(true);
 
 	PhysicsConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(
 		*FString::Printf(TEXT("PhysicsConstraint %s"), *this->GetName()));
@@ -109,6 +109,7 @@ void UVRHandMotionController::SetupPhysicsConstraint()
 	PhysicsConstraint->SetLinearVelocityDrive(true, true, true);
 	PhysicsConstraint->SetLinearDriveParams(200000000.0, 20000000.0, 0);
 	PhysicsConstraint->SetAngularDriveMode(EAngularDriveMode::TwistAndSwing);
+	PhysicsConstraint->SetAngularOrientationTarget(FRotator(0));
 	PhysicsConstraint->SetAngularDriveParams(500, 50, 0.0);
 	PhysicsConstraint->SetConstrainedComponents(HandPivot, NAME_None, HandSkeletalMesh, NAME_None);
 }

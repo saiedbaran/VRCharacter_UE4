@@ -6,42 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/VRCharacter/Blueprint/BP_PickupActor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/VRCharacter/Public/PickupActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/gamepad.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/gamepad.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/holographic_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/holographic_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/hpmotioncontroller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/hpmotioncontroller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/indexhmd.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/indexhmd.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/knuckles.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/knuckles.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/oculus_touch.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/oculus_touch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/rift.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/rift.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/steamvr_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/steamvr_manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_cosmos_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_cosmos_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_pro.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_pro.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_camera.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_camera.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_chest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_chest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_handed.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_handed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_keyboard.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_keyboard.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_elbow.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_elbow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_foot.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_foot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_knee.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_knee.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_shoulder.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_left_shoulder.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_elbow.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_elbow.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_foot.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_foot.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_knee.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_knee.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_shoulder.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_right_shoulder.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_waist.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_tracker_waist.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/VRCharacter/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/VRCharacter/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/VRCharacter/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/VRCharacter/Map/Default_P.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/VRCharacter/Private/VRCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VRCharacter/Private/VRCharacterBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/VRCharacter/Private/VRHandMotionController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VRCharacter/Private/VRHandMotionController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/VRCharacter/Public/VRCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VRCharacter/Public/VRCharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/VRCharacter/Public/VRHandMotionController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/VRCharacter/Public/VRHandMotionController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,18 +48,24 @@
       <option value="$PROJECT_DIR$/Source/VRCharacter/Public/InteractableInterface.h" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/Public/VRHandAnimationInstance.h" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRHandAnimationInstance.cpp" />
-      <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRCharacterBase.cpp" />
-      <option value="$PROJECT_DIR$/Source/VRCharacter/Public/VRCharacterBase.h" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/Public/VRHandMotionController.h" />
+      <option value="$PROJECT_DIR$/Source/VRCharacter/Public/VRCharacterBase.h" />
+      <option value="$PROJECT_DIR$/Source/VRCharacter/Public/PickupActor.h" />
+      <option value="$PROJECT_DIR$/Source/VRCharacter/Private/PickupActor.cpp" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRHandMotionController.cpp" />
+      <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRCharacterBase.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mWUarGqBvrv25eN8s4mYtdLVtP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.5213194" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
@@ -318,7 +300,8 @@
       <updated>1609608906905</updated>
       <workItem from="1609608922205" duration="17585000" />
       <workItem from="1609786178800" duration="6257000" />
-      <workItem from="1609870905719" duration="3414000" />
+      <workItem from="1609870905719" duration="3759000" />
+      <workItem from="1609878889726" duration="3084000" />
     </task>
     <servers />
   </component>
@@ -340,6 +323,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

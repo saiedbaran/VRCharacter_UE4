@@ -148,6 +148,14 @@
 			"requirement": "optional"
 		},
 		{
+			"name": "/actions/main/in/GrabRight",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/GrabLeft",
+			"type": "boolean"
+		},
+		{
 			"name": "/actions/main/in/GrabAxisRight axis",
 			"type": "vector1"
 		},
@@ -396,6 +404,8 @@
 			"/actions/main/out/vibrateleft": "Haptic (Left)",
 			"/actions/main/out/vibrateright": "Haptic (Right)",
 			"/actions/main/in/open_console": "Open Console",
+			"/actions/main/in/GrabRight": "GrabRight",
+			"/actions/main/in/GrabLeft": "GrabLeft",
 			"/actions/main/in/GrabAxisRight axis": "GrabAxisRight",
 			"/actions/main/in/GrabAxisLeft axis": "GrabAxisLeft",
 			"/actions/main": "Main Game Actions"

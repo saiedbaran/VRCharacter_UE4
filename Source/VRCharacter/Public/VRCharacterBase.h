@@ -28,6 +28,7 @@ public:
 	AVRCharacterBase();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	virtual void PostRegisterAllComponents() override;
 
 	void OnGrabRight();
 	void OnGrabLeft();
