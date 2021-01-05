@@ -60,7 +60,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] components")
 	UVRHandMotionController* LeftHand;
-
+	
 protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Debug")
@@ -71,6 +71,8 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Debug")
 	bool bDebugHandPose = false;
+
+	
 
 private:
 

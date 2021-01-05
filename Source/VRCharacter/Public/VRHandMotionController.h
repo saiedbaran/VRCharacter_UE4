@@ -22,6 +22,8 @@ class VRCHARACTER_API UVRHandMotionController : public USceneComponent
 	// Methods	
 public:
 	UVRHandMotionController();
+	void Initialization();
+	void SetMesh();
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
@@ -67,6 +69,15 @@ public:
 	bool bIsTrackingHandPose = true;
 
 protected:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
+	USkeletalMesh* HandMeshVisualisation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
+	UStaticMesh* HandPivotVisualisation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
+	TSubclassOf<UAnimInstance> Animation;
 
 private:
 };

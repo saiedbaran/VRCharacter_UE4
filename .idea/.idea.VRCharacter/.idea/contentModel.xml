@@ -49062,6 +49062,7 @@
     <e p="C:\Users\RainyDream_GameLabGr\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\RainyDream_GameLabGr\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_VRCharacter.-1326570217.00" t="ExcludeRecursive" />
     <e p="C:\Users\RainyDream_GameLabGr\Documents\UnrealEngine\VRCharacter" t="IncludeFlat">
+      <e p=".gitignore" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
@@ -49104,6 +49105,7 @@
         <e p="VRCharacter.vcxproj" t="IncludeRecursive" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
       <e p="Source" t="Include">
         <e p="VRCharacter" t="Include">
           <e p="Private" t="Include">
