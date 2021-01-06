@@ -22,13 +22,15 @@ class VRCHARACTERPLUGIN_API UVRHandMotionController : public USceneComponent
 	// Methods	
 public:
 	UVRHandMotionController();
-	void Initialization();
-	void SetMesh();
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType,
 	                           FActorComponentTickFunction* ThisTickFunction) override;
 
+	void Initialization();
+	void SetMesh();
 	void SetupPhysicsConstraint();
 	void ToggleGrabSphereHiddenInGame(bool bIsHiddenInGame) const;
+	void SetGrabSphereOffset();
+
 	void SetTypeOfGrab(int TOG);
 	float GetGripStat() const;
 	int GetTypeOfGrab() const;
@@ -78,6 +80,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
 	TSubclassOf<UAnimInstance> Animation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
+	FVector GrabSphereOffset;
 
 private:
 };

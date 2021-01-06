@@ -84,6 +84,8 @@ void UVRHandMotionController::Initialization()
 	HandSkeletalMesh->SetSimulatePhysics(true);
 
 	SetupPhysicsConstraint();
+
+	SetGrabSphereOffset();
 }
 
 void UVRHandMotionController::SetMesh()
@@ -123,6 +125,12 @@ void UVRHandMotionController::TickComponent(float DeltaTime, ELevelTick TickType
 void UVRHandMotionController::ToggleGrabSphereHiddenInGame(const bool bIsHiddenInGame) const
 {
 	GrabSphere->SetHiddenInGame(bIsHiddenInGame);
+}
+
+void UVRHandMotionController::SetGrabSphereOffset()
+{
+	GrabSphere->SetRelativeLocation(GrabSphere->GetRelativeLocation()+GrabSphereOffset);
+	//if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 3, FColor::Black, TEXT("GrabSphereOffset"));}
 }
 
 void UVRHandMotionController::SetTypeOfGrab(int TOG)

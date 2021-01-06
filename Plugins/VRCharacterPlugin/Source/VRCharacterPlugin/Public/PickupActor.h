@@ -35,11 +35,14 @@ public:
 
 protected:
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMeshComponent;
 
-	UPROPERTY(VisibleAnywhere, Category = "[Properties]: Attach Behaviour")
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* CustomAttachPoint;
+
+	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
+	bool bIsAutoWeld = true;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
 	bool bSnapToHand = false;
@@ -52,9 +55,6 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
 	bool bIsShowingDebug = false;
-
-	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
-	bool Testbool = false;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Animation")
 	TEnumAsByte<EGrabType> TypeOfGrab;

@@ -14,6 +14,7 @@ APickupActor::APickupActor()
 
 	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticMeshComponent"));
 	SetRootComponent(StaticMeshComponent);
+	StaticMeshComponent->BodyInstance.bAutoWeld = false;
 	StaticMeshComponent->SetCollisionObjectType(ECC_Grabbable);
 	StaticMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	StaticMeshComponent->SetGenerateOverlapEvents(true);
