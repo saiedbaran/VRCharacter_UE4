@@ -15,6 +15,7 @@ enum EGrabType
     Bow UMETA(DisplayName = "Bow"),
     Sphere UMETA(DisplayName = "Sphere"),
     Pointing UMETA(DisplayName = "Pointing"),
+	Lever UMETA(DisplayName = "Lever"),
 };
 
 UINTERFACE()
