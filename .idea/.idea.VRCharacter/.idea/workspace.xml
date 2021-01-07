@@ -9,16 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/Lever_Root_RootAction.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhysicsBase_Simple.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/BP_SteamVR_RightFull.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/BP_SteamVR_RightFull.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractableInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractableInterface.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -430,7 +424,8 @@
       <workItem from="1609878889726" duration="3084000" />
       <workItem from="1609922017457" duration="4928000" />
       <workItem from="1609944917562" duration="1742000" />
-      <workItem from="1609954395976" duration="4197000" />
+      <workItem from="1609954395976" duration="4364000" />
+      <workItem from="1610016427636" duration="1213000" />
     </task>
     <servers />
   </component>
