@@ -5,9 +5,14 @@
 #include "VRCharacterPlugin/Public/VRCharacterBase.h"
 #include "InteractableInterface.h"
 #include "MotionControllerComponent.h"
+#include "NavigationSystem.h"
 #include "VRHandMotionController.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/SphereComponent.h"
+#include "Components/SplineComponent.h"
+#include "Components/SplineMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 AVRCharacterBase::AVRCharacterBase()
 {
@@ -48,6 +53,11 @@ void AVRCharacterBase::BeginPlay()
 void AVRCharacterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	if (bIsUpdatingTeleportDestination)
+	{
+		UpdateDestinationMarker();
+	}
 }
 
 void AVRCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -61,6 +71,11 @@ void AVRCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 	PlayerInputComponent->BindAxis("GrabAxisRight", this, &AVRCharacterBase::UpdateGripStatRight);
 	PlayerInputComponent->BindAxis("GrabAxisLeft", this, &AVRCharacterBase::UpdateGripStatLeft);
+
+	PlayerInputComponent->BindAction("TeleportRight", IE_Pressed, this, &AVRCharacterBase::OnPressTeleportRight);
+	PlayerInputComponent->BindAction("TeleportRight", IE_Released, this, &AVRCharacterBase::OnReleaseTeleportRight);
+	PlayerInputComponent->BindAction("TeleportLeft", IE_Pressed, this, &AVRCharacterBase::OnPressTeleportLeft);
+	PlayerInputComponent->BindAction("TeleportLeft", IE_Released, this, &AVRCharacterBase::OnReleaseTeleportLeft);
 }
 
 void AVRCharacterBase::PostRegisterAllComponents()
@@ -252,4 +267,179 @@ void AVRCharacterBase::UpdateGripStatLeft(const float AxisValue)
 	}
 
 	LeftHand->GripState = AxisValue;
+}
+
+void AVRCharacterBase::OnPressTeleportRight()
+{
+	bIsUpdatingTeleportDestination = true;
+	bIsRightHandDoTeleportation = true;
+	RightHand->bIsTrackingHandPose = false;
+	RightHand->SetTypeOfGrab(Pointing);
+}
+
+void AVRCharacterBase::OnReleaseTeleportRight()
+{
+	if (!bIsDestinationFound) { return; }
+
+	UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraFade(
+        0, 1, TeleportFadeDelay, CameraFadeColor, false, true);
+
+	FTimerHandle TimerHandle;
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AVRCharacterBase::BeginTeleport, TeleportFadeDelay);
+
+	bIsUpdatingTeleportDestination = false;
+	TeleportIndicator->SetVisibility(false);
+	bIsDestinationFound = false;
+	ClearProjectilePool();
+	bIsRightHandDoTeleportation = false;
+	RightHand->bIsTrackingHandPose = true;
+	RightHand->SetTypeOfGrab(DefaultTypeOfGrab);
+}
+
+void AVRCharacterBase::OnPressTeleportLeft()
+{
+	if (bIsRightHandDoTeleportation) { return; }
+	bIsUpdatingTeleportDestination = true;
+	LeftHand->bIsTrackingHandPose = false;
+	LeftHand->SetTypeOfGrab(Pointing);
+}
+
+void AVRCharacterBase::OnReleaseTeleportLeft()
+{
+	if (!bIsDestinationFound) { return; }
+
+	UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraFade(
+        0, 1, TeleportFadeDelay, CameraFadeColor, false, true);
+
+	FTimerHandle TimerHandle;
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AVRCharacterBase::BeginTeleport, TeleportFadeDelay);
+
+	bIsUpdatingTeleportDestination = false;
+	TeleportIndicator->SetVisibility(false);
+	bIsDestinationFound = false;
+	LeftHand->bIsTrackingHandPose = true;
+	LeftHand->SetTypeOfGrab(DefaultTypeOfGrab);
+	ClearProjectilePool();
+}
+
+void AVRCharacterBase::UpdateDestinationMarker()
+{
+	auto ActiveHand = bIsRightHandDoTeleportation ? RightHand->HandSkeletalMesh : LeftHand->HandSkeletalMesh;
+
+	const FVector StartPos = ActiveHand->GetComponentLocation() + ActiveHand->GetForwardVector() * TeleportBeginOffset;
+	const FVector LaunchVelocityVector = ActiveHand->GetForwardVector() * TeleportLaunchVelocity;
+
+	FPredictProjectilePathParams PathParams(ProjectilePathRadius, StartPos, LaunchVelocityVector, ProjectileDuration,
+                                            ECC_Visibility, this);
+	FPredictProjectilePathResult PathResult;
+	bIsHitTeleportTarget = UpdateProjectilePath(PathParams, PathResult, StartPos, LaunchVelocityVector);
+
+	FNavLocation PointOnNavMeshLocation;
+	const UNavigationSystemV1* NavSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(this);
+	const auto bIsProjectedToNavMesh = NavSystem->ProjectPointToNavigation(
+        PathResult.HitResult.Location, PointOnNavMeshLocation);
+
+	if (bIsHitTeleportTarget && bIsProjectedToNavMesh)
+	{
+		TeleportIndicator->SetWorldLocation(PointOnNavMeshLocation.Location);
+
+		auto ForwardVector = ActiveHand->GetForwardVector();
+		ForwardVector = FVector(ForwardVector.X, ForwardVector.Y, 0);
+
+		TeleportIndicator->SetWorldRotation(ForwardVector.Rotation());
+		TeleportIndicator->SetVisibility(true);
+		bIsDestinationFound = true;
+
+		TArray<FVector> PathPoints;
+		for (auto Point : PathResult.PathData)
+		{
+			PathPoints.Add(Point.Location);
+		}
+
+		UpdateProjectileSpline(PathPoints);
+		UpdateProjectileMesh(PathPoints);
+	}
+	else
+	{
+		TeleportIndicator->SetVisibility(false);
+		ClearProjectilePool();
+		bIsDestinationFound = false;
+	}
+}
+
+bool AVRCharacterBase::UpdateProjectilePath(FPredictProjectilePathParams& PathParams,
+	FPredictProjectilePathResult& PathResult, FVector StartPos, FVector LaunchVelocityVector) const
+{
+	if (bIsShowProjectionDebug)
+	{
+		PathParams.DrawDebugType = EDrawDebugTrace::ForOneFrame;
+	}
+	PathParams.bTraceComplex = bIsTraceComplex;
+	const bool bIsHit = UGameplayStatics::PredictProjectilePath(this, PathParams, PathResult);
+
+	return bIsHit;
+}
+
+void AVRCharacterBase::UpdateProjectileSpline(TArray<FVector> PathPoints) const
+{
+	const auto CurrentProjectileSpline = bIsRightHandDoTeleportation ? RightHand->TeleportSpline : LeftHand->TeleportSpline;
+
+	CurrentProjectileSpline->ClearSplinePoints(false);
+
+
+	for (int32 i = 0; i < PathPoints.Num(); i++)
+	{
+		FVector LocalPosition = CurrentProjectileSpline->GetComponentTransform().
+                                                         InverseTransformPosition(PathPoints[i]);
+		FSplinePoint SplinePoint(i, LocalPosition);
+		CurrentProjectileSpline->AddPoint(SplinePoint, false);
+	}
+
+	CurrentProjectileSpline->UpdateSpline();
+}
+
+void AVRCharacterBase::ClearProjectilePool()
+{
+	if (ProjectileMeshPool.Num() != 0)
+	{
+		for (auto PMesh : ProjectileMeshPool)
+		{
+			PMesh->DestroyComponent();
+		}
+		ProjectileMeshPool.Empty();
+	}
+}
+
+void AVRCharacterBase::UpdateProjectileMesh(TArray<FVector> PathPoints)
+{
+	ClearProjectilePool();
+
+	const auto ActiveHand = bIsRightHandDoTeleportation ? RightHand->HandSkeletalMesh : LeftHand->HandSkeletalMesh;
+	const auto CurrentProjectileSpline = bIsRightHandDoTeleportation ? RightHand->TeleportSpline : LeftHand->TeleportSpline;
+	FVector StartPos, EndPos, StartTangent, EndTangent;
+	const auto NumberOfSegments = PathPoints.Num() - 1;
+	for (int32 i = 0; i < NumberOfSegments; ++i)
+	{
+		USplineMeshComponent* SplineMesh = NewObject<USplineMeshComponent>();
+		SplineMesh->SetMobility(EComponentMobility::Movable);
+		SplineMesh->AttachToComponent(ActiveHand, FAttachmentTransformRules::KeepRelativeTransform);
+		SplineMesh->SetStaticMesh(TeleportProjectileMesh);
+		SplineMesh->SetMaterial(0, TeleportProjectileMaterial);
+		SplineMesh->SetCollisionResponseToAllChannels(ECR_Ignore);
+		SplineMesh->RegisterComponent();
+		SplineMesh->RegisterComponentWithWorld(GetWorld());
+		ProjectileMeshPool.Add(SplineMesh);
+
+		CurrentProjectileSpline->GetLocalLocationAndTangentAtSplinePoint(i, StartPos, StartTangent);
+		CurrentProjectileSpline->GetLocalLocationAndTangentAtSplinePoint(i + 1, EndPos, EndTangent);
+		SplineMesh->SetStartAndEnd(StartPos, StartTangent, EndPos, EndTangent);
+	}
+}
+
+void AVRCharacterBase::BeginTeleport() const
+{
+	GetRootComponent()->SetWorldLocation(
+    TeleportIndicator->GetComponentLocation() + GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * GetActorUpVector());
+
+	UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraFade(1, 0, TeleportFadeDelay, CameraFadeColor);
 }

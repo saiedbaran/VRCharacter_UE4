@@ -140,7 +140,8 @@ void UVRHandMotionController::SetTypeOfGrab(int TOG)
 
 float UVRHandMotionController::GetGripStat() const
 {
-	return GripState;
+	if(bIsTrackingHandPose) {return GripState;}
+	return 1;
 }
 
 int UVRHandMotionController::GetTypeOfGrab() const

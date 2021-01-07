@@ -27,6 +27,7 @@ public class VRCharacterPlugin : ModuleRules
 			{
 				"Core",
 				"HeadMountedDisplay",
+				"NavigationSystem",
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

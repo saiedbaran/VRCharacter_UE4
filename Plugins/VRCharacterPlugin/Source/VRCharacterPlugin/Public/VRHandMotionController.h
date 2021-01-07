@@ -69,6 +69,7 @@ public:
 	float GripState = 0;
 	int TypeOfGrab = 0;
 	bool bIsTrackingHandPose = true;
+	
 
 protected:
 
