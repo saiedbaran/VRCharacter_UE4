@@ -9,15 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Temp_InteractionAreaActor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractionAreaComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/steamvr_manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/steamvr_manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/SteamVRBindings/vive_controller.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/SteamVRBindings/vive_controller.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhysicsBase_Simple.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +33,14 @@
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/ActorComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Components/PrimitiveComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/Obj.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Animation/AnimInstance.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/PhysicsConstraintComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/PhysicsEngine/PhysicsConstraintTemplate.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/UObjectGlobals.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SphereComponent.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -54,7 +56,6 @@
       <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRHandMotionController.cpp" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/Private/VRCharacterBase.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandAnimationInstance.cpp" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/VRCharacterPlugin.Build.cs" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/test.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandAnimationInstance.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterGameModeBase.h" />
@@ -65,10 +66,16 @@
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractableInterface.h" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/VRCharacterPlugin.Build.cs" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/InteractionArea.cpp" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/InteractionArea.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/InteractionAreaComponent.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/InteractionAreaComponent.cpp" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mWUarGqBvrv25eN8s4mYtdLVtP" />
@@ -431,7 +438,8 @@
       <workItem from="1609922017457" duration="4928000" />
       <workItem from="1609944917562" duration="1742000" />
       <workItem from="1609954395976" duration="4364000" />
-      <workItem from="1610016427636" duration="5124000" />
+      <workItem from="1610016427636" duration="5910000" />
+      <workItem from="1610208143018" duration="6911000" />
     </task>
     <servers />
   </component>

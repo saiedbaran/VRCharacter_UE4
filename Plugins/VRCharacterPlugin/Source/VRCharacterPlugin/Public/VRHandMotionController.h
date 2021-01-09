@@ -5,6 +5,7 @@
 
 #include "CoreMinimal.h"
 #include "InteractableInterface.h"
+#include "InteractionAreaComponent.h"
 #include "VRHandMotionController.generated.h"
 
 
@@ -34,6 +35,16 @@ public:
 	void SetTypeOfGrab(int TOG);
 	float GetGripStat() const;
 	int GetTypeOfGrab() const;
+
+
+	UFUNCTION()
+	void GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	                            UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+	                            const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void GrabSphereEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	                               UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 protected:
 	virtual void BeginPlay() override;
@@ -69,7 +80,8 @@ public:
 	float GripState = 0;
 	int TypeOfGrab = 0;
 	bool bIsTrackingHandPose = true;
-	
+	bool bTrackDistanceBaseGripStat = false;
+
 
 protected:
 
@@ -84,6 +96,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] Overwrite")
 	FVector GrabSphereOffset;
+
+	UPROPERTY(Transient)
+	UInteractionAreaComponent* InteractionAreaComponent = nullptr;
 
 private:
 };

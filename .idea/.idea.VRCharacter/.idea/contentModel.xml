@@ -49120,6 +49120,7 @@
           <e p="Source" t="Include">
             <e p="VRCharacterPlugin" t="Include">
               <e p="Private" t="Include">
+                <e p="InteractionAreaComponent.cpp" t="Include" />
                 <e p="PickupActor.cpp" t="Include" />
                 <e p="PickupActorPhysicBase.cpp" t="Include" />
                 <e p="VRCharacterBase.cpp" t="Include" />
@@ -49130,6 +49131,7 @@
               </e>
               <e p="Public" t="Include">
                 <e p="InteractableInterface.h" t="Include" />
+                <e p="InteractionAreaComponent.h" t="Include" />
                 <e p="PickupActor.h" t="Include" />
                 <e p="PickupActorPhysicBase.h" t="Include" />
                 <e p="VRCharacterBase.h" t="Include" />

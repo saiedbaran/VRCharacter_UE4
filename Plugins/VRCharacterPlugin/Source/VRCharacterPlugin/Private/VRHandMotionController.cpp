@@ -69,6 +69,8 @@ void UVRHandMotionController::BeginPlay()
 	Super::BeginPlay();
 
 	Initialization();
+
+	GrabSphere->OnComponentBeginOverlap.AddDynamic(this, &UVRHandMotionController::GrabSphereOverlapEvent);
 }
 
 void UVRHandMotionController::Initialization()
@@ -129,7 +131,7 @@ void UVRHandMotionController::ToggleGrabSphereHiddenInGame(const bool bIsHiddenI
 
 void UVRHandMotionController::SetGrabSphereOffset()
 {
-	GrabSphere->SetRelativeLocation(GrabSphere->GetRelativeLocation()+GrabSphereOffset);
+	GrabSphere->SetRelativeLocation(GrabSphere->GetRelativeLocation() + GrabSphereOffset);
 	//if(GEngine){GEngine->AddOnScreenDebugMessage(-1, 3, FColor::Black, TEXT("GrabSphereOffset"));}
 }
 
@@ -140,11 +142,68 @@ void UVRHandMotionController::SetTypeOfGrab(int TOG)
 
 float UVRHandMotionController::GetGripStat() const
 {
-	if(bIsTrackingHandPose) {return GripState;}
+	if (bIsTrackingHandPose) { return GripState; }
+	if (bTrackDistanceBaseGripStat && InteractionAreaComponent)
+	{
+		const auto Distance = FVector::Distance(GrabSphere->GetComponentLocation(),
+		                                        InteractionAreaComponent->GetComponentLocation());
+		const auto ComponentRadius = InteractionAreaComponent->GetScaledSphereRadius();
+		const auto StatValue = FMath::GetMappedRangeValueClamped(FVector2D(0, ComponentRadius), FVector2D(1, 0),
+		                                                         Distance);
+		
+		/*
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Black, FString::Printf(TEXT("Grip stat: %f"), StatValue));
+		}
+		*/
+
+		return StatValue;
+	}
 	return 1;
 }
 
 int UVRHandMotionController::GetTypeOfGrab() const
 {
 	return TypeOfGrab;
+}
+
+void UVRHandMotionController::GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+                                                     UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+                                                     bool bFromSweep, const FHitResult& SweepResult)
+{
+	auto Tags = OtherComp->ComponentTags;
+	for (auto Tag : Tags)
+	{
+		if (Tag == InteractionArea)
+		{
+			// UE_LOG(LogTemp, Warning, TEXT("Hand begin overlapped"))
+
+			InteractionAreaComponent = Cast<UInteractionAreaComponent>(OtherComp);
+			if (InteractionAreaComponent)
+			{
+				bIsTrackingHandPose = false;
+				if (InteractionAreaComponent->bDistanceBaseAnimation)
+				{
+					bTrackDistanceBaseGripStat = true;
+				}
+				SetTypeOfGrab(InteractionAreaComponent->TypeOfGrab);
+			}
+		}
+	}
+}
+
+void UVRHandMotionController::GrabSphereEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	auto Tags = OtherComp->ComponentTags;
+	for (auto Tag : Tags)
+	{
+		if (Tag == InteractionArea)
+		{
+			bIsTrackingHandPose = true;
+			bTrackDistanceBaseGripStat = false;
+		}
+	}
+	
 }
