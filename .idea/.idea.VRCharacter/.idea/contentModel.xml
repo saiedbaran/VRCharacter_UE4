@@ -49123,6 +49123,7 @@
                 <e p="InteractionAreaComponent.cpp" t="Include" />
                 <e p="PickupActor.cpp" t="Include" />
                 <e p="PickupActorPhysicBase.cpp" t="Include" />
+                <e p="SliderActor.cpp" t="Include" />
                 <e p="VRCharacterBase.cpp" t="Include" />
                 <e p="VRCharacterGameModeBase.cpp" t="Include" />
                 <e p="VRCharacterPlugin.cpp" t="Include" />
@@ -49134,6 +49135,7 @@
                 <e p="InteractionAreaComponent.h" t="Include" />
                 <e p="PickupActor.h" t="Include" />
                 <e p="PickupActorPhysicBase.h" t="Include" />
+                <e p="SliderActor.h" t="Include" />
                 <e p="VRCharacterBase.h" t="Include" />
                 <e p="VRCharacterGameModeBase.h" t="Include" />
                 <e p="VRCharacterPlugin.h" t="Include" />

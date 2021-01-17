@@ -9,16 +9,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Temp_InteractionAreaActor.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractionAreaComponent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/MI_Slider.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/SimpleSlider_Material_001_BaseColor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/SimpleSlider_Material_001_Emissive.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/SimpleSlider_Material_001_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/SimpleSlider_Material_001_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Slider/BP_Temp_Slider.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Slider/SimpleSlider_ToUnreal_Cube_001.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Slider/SimpleSlider_ToUnreal_Cube_004.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/SliderActor.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/M_Substance_PBR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/M_Substance_PBR.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Sphere/MI_PBR_Sphere.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Sphere/MI_PBR_Sphere.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +81,8 @@
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/InteractionAreaComponent.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/SliderActor.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/SliderActor.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1mWUarGqBvrv25eN8s4mYtdLVtP" />
@@ -439,7 +446,11 @@
       <workItem from="1609944917562" duration="1742000" />
       <workItem from="1609954395976" duration="4364000" />
       <workItem from="1610016427636" duration="5910000" />
-      <workItem from="1610208143018" duration="6911000" />
+      <workItem from="1610208143018" duration="7326000" />
+      <workItem from="1610394846857" duration="1089000" />
+      <workItem from="1610396965384" duration="4211000" />
+      <workItem from="1610912755909" duration="3528000" />
+      <workItem from="1610916386279" duration="1366000" />
     </task>
     <servers />
   </component>
