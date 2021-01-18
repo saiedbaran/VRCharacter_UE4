@@ -72,9 +72,17 @@ protected:
 	UPROPERTY(EditAnywhere)
 	AActor* TestActor;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	USceneComponent* ControllerComponent;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	float MaxDistanceToDetach = 100;
+
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug", meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0",
 		UIMax = "1.0"))
 	float SlidingRatio = 0;
+
+	
 
 private:
 

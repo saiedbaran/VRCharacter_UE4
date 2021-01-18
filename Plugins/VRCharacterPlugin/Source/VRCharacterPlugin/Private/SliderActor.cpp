@@ -60,10 +60,6 @@ void ASliderActor::BeginPlay()
 	SlideDistance = FVector::Distance(EndPoint->GetComponentLocation(),BeginPoint->GetComponentLocation());
 	SliderDirection = (EndPoint->GetComponentLocation() - BeginPoint->GetComponentLocation()).GetSafeNormal();
 
-	// To be removed
-	if(TestActor){bIsSliding = true;}
-
-	
 }
 
 void ASliderActor::Tick(float DeltaTime)
@@ -78,10 +74,14 @@ void ASliderActor::Tick(float DeltaTime)
 
 void ASliderActor::GrabPressed(USceneComponent* AttachTo)
 {
+	bIsSliding = true;
+	ControllerComponent = AttachTo;
 }
 
 void ASliderActor::GrabReleased()
 {
+	bIsSliding = false;
+	ControllerComponent = nullptr;
 }
 
 int ASliderActor::GetGrabType()
@@ -101,7 +101,8 @@ FRotator ASliderActor::GetCustomAttachRotation() const
 
 void ASliderActor::SlidingAction()
 {
-	const auto ProjectedLocation = TestActor->GetActorLocation().ProjectOnTo(SliderDirection);
+	if(ControllerComponent == nullptr){return;}
+	const auto ProjectedLocation = ControllerComponent->GetComponentLocation().ProjectOnTo(SliderDirection);
 	const auto DistanceToBegin = FVector::Distance(ProjectedLocation, BeginPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
 	const auto DistanceToEnd = FVector::Distance(ProjectedLocation, EndPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
 	SlidingRatio = FMath::Clamp(DistanceToBegin / SlideDistance, 0.0f,1.0f);
@@ -113,4 +114,9 @@ void ASliderActor::SlidingAction()
 
 	const auto UpdatedSliderLocation = BeginPoint->GetComponentLocation() + SlidingRatio * SlideDistance * SliderDirection;
 	HandleStaticMesh->SetWorldLocation(UpdatedSliderLocation);
+
+	if(FVector::Distance(ControllerComponent->GetComponentLocation(), HandleStaticMesh->GetComponentLocation()) > MaxDistanceToDetach)
+	{
+		GrabReleased();
+	}
 }
