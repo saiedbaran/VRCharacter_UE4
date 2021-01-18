@@ -69,9 +69,6 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Animation")
 	TEnumAsByte<EGrabType> TypeOfGrab;
 
-	UPROPERTY(EditAnywhere)
-	AActor* TestActor;
-
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USceneComponent* ControllerComponent;
 	

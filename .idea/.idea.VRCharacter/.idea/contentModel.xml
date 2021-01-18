@@ -49121,6 +49121,7 @@
             <e p="VRCharacterPlugin" t="Include">
               <e p="Private" t="Include">
                 <e p="InteractionAreaComponent.cpp" t="Include" />
+                <e p="LinearDriveActor.cpp" t="Include" />
                 <e p="PickupActor.cpp" t="Include" />
                 <e p="PickupActorPhysicBase.cpp" t="Include" />
                 <e p="SliderActor.cpp" t="Include" />
@@ -49133,6 +49134,7 @@
               <e p="Public" t="Include">
                 <e p="InteractableInterface.h" t="Include" />
                 <e p="InteractionAreaComponent.h" t="Include" />
+                <e p="LinearDriveActor.h" t="Include" />
                 <e p="PickupActor.h" t="Include" />
                 <e p="PickupActorPhysicBase.h" t="Include" />
                 <e p="SliderActor.h" t="Include" />
