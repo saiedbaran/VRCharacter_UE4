@@ -54,8 +54,6 @@ void ALinearDriveActor::BeginPlay()
 
 	LocationInitialization();
 
-	SlideDistance = FVector::Distance(InitialLocation,InitialGoal);
-	SliderDirection = (InitialGoal - InitialLocation).GetSafeNormal();
 }
 
 FVector ALinearDriveActor::GetCustomAttachLocation() const
@@ -99,6 +97,9 @@ void ALinearDriveActor::LocationInitialization()
 {
 	InitialLocation = BeginPoint->GetComponentLocation();
 	InitialGoal = EndPoint->GetComponentLocation();
+
+	SlideDistance = FVector::Distance(InitialLocation,InitialGoal);
+	SliderDirection = (InitialGoal - InitialLocation).GetSafeNormal();
 }
 
 void ALinearDriveActor::SlidingAction()
