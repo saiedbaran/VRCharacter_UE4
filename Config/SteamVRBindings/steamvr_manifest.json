@@ -156,6 +156,14 @@
 			"type": "boolean"
 		},
 		{
+			"name": "/actions/main/in/TeleportRight",
+			"type": "boolean"
+		},
+		{
+			"name": "/actions/main/in/TeleportLeft",
+			"type": "boolean"
+		},
+		{
 			"name": "/actions/main/in/GrabAxisRight axis",
 			"type": "vector1"
 		},
@@ -406,6 +414,8 @@
 			"/actions/main/in/open_console": "Open Console",
 			"/actions/main/in/GrabRight": "GrabRight",
 			"/actions/main/in/GrabLeft": "GrabLeft",
+			"/actions/main/in/TeleportRight": "TeleportRight",
+			"/actions/main/in/TeleportLeft": "TeleportLeft",
 			"/actions/main/in/GrabAxisRight axis": "GrabAxisRight",
 			"/actions/main/in/GrabAxisLeft axis": "GrabAxisLeft",
 			"/actions/main": "Main Game Actions"

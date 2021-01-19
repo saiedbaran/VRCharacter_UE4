@@ -49107,28 +49107,58 @@
         <e p="VRCharacter.vcxproj" t="IncludeRecursive" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Plugins" t="Include">
+        <e p="VRCharacterPlugin" t="Include">
+          <e p="Config" t="Include">
+            <e p="FilterPlugin.ini" t="Include" />
+            <e p="VRCharacter_Collision.ini" t="Include" />
+            <e p="VRCharacter_Input.ini" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="Icon128.png" t="Include" />
+          </e>
+          <e p="Source" t="Include">
+            <e p="VRCharacterPlugin" t="Include">
+              <e p="Private" t="Include">
+                <e p="CircularDriveActor.cpp" t="Include" />
+                <e p="InteractionAreaComponent.cpp" t="Include" />
+                <e p="LinearDriveActor.cpp" t="Include" />
+                <e p="PickupActor.cpp" t="Include" />
+                <e p="PickupActorPhysicBase.cpp" t="Include" />
+                <e p="SliderActor.cpp" t="Include" />
+                <e p="VRCharacterBase.cpp" t="Include" />
+                <e p="VRCharacterGameModeBase.cpp" t="Include" />
+                <e p="VRCharacterPlugin.cpp" t="Include" />
+                <e p="VRHandAnimationInstance.cpp" t="Include" />
+                <e p="VRHandMotionController.cpp" t="Include" />
+              </e>
+              <e p="Public" t="Include">
+                <e p="CircularDriveActor.h" t="Include" />
+                <e p="InteractableInterface.h" t="Include" />
+                <e p="InteractionAreaComponent.h" t="Include" />
+                <e p="LinearDriveActor.h" t="Include" />
+                <e p="PickupActor.h" t="Include" />
+                <e p="PickupActorPhysicBase.h" t="Include" />
+                <e p="SliderActor.h" t="Include" />
+                <e p="VRCharacterBase.h" t="Include" />
+                <e p="VRCharacterGameModeBase.h" t="Include" />
+                <e p="VRCharacterPlugin.h" t="Include" />
+                <e p="VRCharacterStatics.h" t="Include" />
+                <e p="VRHandAnimationInstance.h" t="Include" />
+                <e p="VRHandMotionController.h" t="Include" />
+              </e>
+              <e p="VRCharacterPlugin.Build.cs" t="Include" />
+            </e>
+          </e>
+          <e p="VRCharacterPlugin.uplugin" t="Include" />
+        </e>
+      </e>
       <e p="README.md" t="Include" />
       <e p="Source" t="Include">
         <e p="VRCharacter" t="Include">
-          <e p="Private" t="Include">
-            <e p="PickupActor.cpp" t="Include" />
-            <e p="VRCharacterBase.cpp" t="Include" />
-            <e p="VRHandAnimationInstance.cpp" t="Include" />
-            <e p="VRHandMotionController.cpp" t="Include" />
-          </e>
-          <e p="Public" t="Include">
-            <e p="InteractableInterface.h" t="Include" />
-            <e p="PickupActor.h" t="Include" />
-            <e p="VRCharacterBase.h" t="Include" />
-            <e p="VRCharacterStatics.h" t="Include" />
-            <e p="VRHandAnimationInstance.h" t="Include" />
-            <e p="VRHandMotionController.h" t="Include" />
-          </e>
           <e p="VRCharacter.Build.cs" t="Include" />
           <e p="VRCharacter.cpp" t="Include" />
           <e p="VRCharacter.h" t="Include" />
-          <e p="VRCharacterGameModeBase.cpp" t="Include" />
-          <e p="VRCharacterGameModeBase.h" t="Include" />
         </e>
         <e p="VRCharacter.Target.cs" t="Include" />
         <e p="VRCharacterEditor.Target.cs" t="Include" />
