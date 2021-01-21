@@ -9,22 +9,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BP_Anim_GearGloveP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Bow.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Box.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Lever.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Pointing.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Squishy.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/BP_Anim_GearGloveP_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/BS_GearGloveP_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/PA_GearGloveP_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/SK_GearGloveP_Left.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/SK_Glove_Left_001_Skeleton.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/BP_Anim_GearGloveP_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/BS_GearGloveP_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/PA_GearGloveP_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_GearGloveP_Right.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Box.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Controller.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Open.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Pointing.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Squishi.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BS_GearGloveP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BS_GearGloveP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/PA_GearGloveP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/PA_GearGloveP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Button/MI_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Button/MI_Button.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/M_Substance_PBR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/M_Substance_PBR.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/BP_Anim_GearGloveP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/BS_GearGloveP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/PA_GearGloveP.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_GearGloveP.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,6 +465,7 @@
       <workItem from="1610916386279" duration="5827000" />
       <workItem from="1610991611971" duration="10305000" />
       <workItem from="1611255728709" duration="688000" />
+      <workItem from="1611266195221" duration="1218000" />
     </task>
     <servers />
   </component>
