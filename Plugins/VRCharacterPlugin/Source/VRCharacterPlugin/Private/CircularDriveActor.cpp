@@ -77,7 +77,7 @@ void ACircularDriveActor::RotationAction()
 
 	const auto CurrentRotator = UKismetMathLibrary::RotatorFromAxisAndAngle(
 		InitialRotationAxis, -1 * FMath::ClampAngle(CurrentRotation, 0, MaxRotation));
-	BaseStaticMesh->SetWorldRotation(CurrentRotator);
+	BaseStaticMesh->SetWorldRotation(CurrentRotator+InitialDriveRotation);
 }
 
 void ACircularDriveActor::Tick(float DeltaTime)
@@ -113,4 +113,5 @@ void ACircularDriveActor::LocationInitialization()
 	InitialRotationPivot = RotationAxis->GetComponentLocation();
 	InitialRotationAxis = RotationAxis->GetForwardVector();
 	BaseLocationVector = InitialRotationBegin - InitialRotationPivot;
+	InitialDriveRotation = BaseStaticMesh->GetComponentRotation();
 }

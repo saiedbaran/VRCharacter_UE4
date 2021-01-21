@@ -87,5 +87,6 @@ protected:
 	FVector InitialRotationAxis;
 	FVector InitialRotationPivot;
 	FVector BaseLocationVector;
+	FRotator InitialDriveRotation;
 	float CurrentRotation;
 };
