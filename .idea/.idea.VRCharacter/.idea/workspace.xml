@@ -8,7 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="" />
+    <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BP_Anim_GearGloveP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Bow.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Box.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Lever.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Pointing.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/animations/Anim_RightGlove_Squishy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BS_GearGloveP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/BS_GearGloveP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/PA_GearGloveP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/untitled_category/VR_Hand/PA_GearGloveP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Cylinder_003.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Cylinder/BasicCylinder_Sphere_001.uasset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -440,6 +457,7 @@
       <workItem from="1610912755909" duration="3528000" />
       <workItem from="1610916386279" duration="5827000" />
       <workItem from="1610991611971" duration="10305000" />
+      <workItem from="1611255728709" duration="688000" />
     </task>
     <servers />
   </component>
