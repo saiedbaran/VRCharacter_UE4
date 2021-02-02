@@ -9,18 +9,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/BP_Anim_GearGloveP_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/BS_GearGloveP_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/PA_GearGloveP_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/SK_GearGloveP_Left.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/untitled_category/untitled_asset/SK_Glove_Left_001_Skeleton.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_LSP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_BaseColor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_Emissive.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_BaseColor.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_Emissive.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_Normal.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_OcclusionRoughnessMetallic.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_LSP.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_Sphere.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/CustomObjects/LevelGlobe/BioSphere.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/CustomObjects/LevelGlobe/LevelDevice.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Box.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Box.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Controller.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Controller.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Open.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Open.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Pointing.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Pointing.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Squishi.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/animations/Anim_LeftGlove_Squishi.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -455,7 +458,8 @@
       <workItem from="1610991611971" duration="10305000" />
       <workItem from="1611255728709" duration="688000" />
       <workItem from="1611266195221" duration="1218000" />
-      <workItem from="1611674926531" duration="263000" />
+      <workItem from="1611674926531" duration="742000" />
+      <workItem from="1612282018218" duration="686000" />
     </task>
     <servers />
   </component>
