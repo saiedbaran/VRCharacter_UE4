@@ -9,21 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_LSP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_BaseColor.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_Emissive.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_Normal.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/BioLab_Sphere_BioLab_Sphere_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_BaseColor.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_Emissive.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_Normal.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/LevelSelectionDevice_LevelSelectionDevice_OcclusionRoughnessMetallic.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_LSP.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_Sphere.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/CustomObjects/LevelGlobe/BioSphere.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/CustomObjects/LevelGlobe/LevelDevice.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/steamvr_ue_editor_app.json" beforeDir="false" afterPath="$PROJECT_DIR$/Config/steamvr_ue_editor_app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/CircularDriveActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/CircularDriveActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/LinearDriveActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/LinearDriveActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActorPhysicBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActorPhysicBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/CircularDriveActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/CircularDriveActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/LinearDriveActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/LinearDriveActor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,9 +61,6 @@
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterGameModeBase.cpp" />
       <option value="$PROJECT_DIR$/Source/VRCharacter/VRCharacter.Build.cs" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActorPhysicBase.h" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActorPhysicBase.cpp" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" />
-      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/InteractableInterface.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" />
@@ -83,7 +74,10 @@
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/SliderActor.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/SliderActor.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActorPhysicBase.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/LinearDriveActor.h" />
+      <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/LinearDriveActor.cpp" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/CircularDriveActor.h" />
       <option value="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/CircularDriveActor.cpp" />
@@ -460,6 +454,7 @@
       <workItem from="1611266195221" duration="1218000" />
       <workItem from="1611674926531" duration="742000" />
       <workItem from="1612282018218" duration="686000" />
+      <workItem from="1612865132308" duration="1105000" />
     </task>
     <servers />
   </component>

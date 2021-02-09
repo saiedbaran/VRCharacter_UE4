@@ -53,7 +53,6 @@ void ALinearDriveActor::BeginPlay()
 	Super::BeginPlay();
 
 	LocationInitialization();
-
 }
 
 FVector ALinearDriveActor::GetCustomAttachLocation() const
@@ -78,6 +77,8 @@ void ALinearDriveActor::Tick(float DeltaTime)
 
 void ALinearDriveActor::GrabPressed(USceneComponent* AttachTo)
 {
+	if(!bIsActiveForInteraction) {return;}
+	
 	bIsSliding = true;
 	ControllerComponent = AttachTo;
 }

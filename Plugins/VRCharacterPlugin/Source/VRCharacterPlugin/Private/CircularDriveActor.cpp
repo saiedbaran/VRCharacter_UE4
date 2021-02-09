@@ -92,6 +92,8 @@ void ACircularDriveActor::Tick(float DeltaTime)
 
 void ACircularDriveActor::GrabPressed(USceneComponent* AttachTo)
 {
+	if(!bIsActiveForInteraction) {return;}
+
 	bIsRotating = true;
 	ControllerComponent = AttachTo;
 }

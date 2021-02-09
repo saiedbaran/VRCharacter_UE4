@@ -1,5 +1,5 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
-
+﻿// Base Actor class for Pickup items
+// Game Lab Graz, Jan 2021
 
 #include "VRCharacterPlugin/Public/PickupActor.h"
 #include "VRCharacterStatics.h"
@@ -48,6 +48,8 @@ void APickupActor::Tick(float DeltaTime)
 
 void APickupActor::GrabPressed(USceneComponent* AttachTo)
 {
+	if(!bIsActiveForInteraction) {return;}
+	
 	StaticMeshComponent->SetSimulatePhysics(false);
 
 	if (bSnapToHand)

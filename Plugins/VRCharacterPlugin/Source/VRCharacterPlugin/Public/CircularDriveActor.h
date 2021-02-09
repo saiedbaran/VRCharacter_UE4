@@ -34,7 +34,7 @@ protected:
 
 	// Members
 
-	public:
+public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* BaseStaticMesh;
@@ -50,6 +50,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* CustomAttachPoint;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	bool bIsActiveForInteraction = true;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
 	bool bIsAutoWeld = true;
@@ -68,7 +71,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USceneComponent* ControllerComponent;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxDistanceToDetach = 100;
 
@@ -81,7 +84,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug")
 	bool bIsShowingDebug = false;
 
-	protected:
+protected:
 
 	FVector InitialRotationBegin;
 	FVector InitialRotationAxis;

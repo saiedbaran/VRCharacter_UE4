@@ -41,6 +41,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* CustomAttachPoint;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	bool bIsActiveForInteraction = true;
+
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Attach Behaviour")
 	bool bIsAutoWeld = true;
 

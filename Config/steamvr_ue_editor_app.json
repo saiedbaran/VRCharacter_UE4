@@ -2,7 +2,7 @@
 	"source": "UE",
 	"applications": [
 		{
-			"app_key": "application.generated.ue.vrcharacter-14830424.ue4editor.exe",
+			"app_key": "application.generated.ue.vrcharacter-15228867.ue4editor.exe",
 			"launch_type": "url",
 			"url": "steam://launch/",
 			"action_manifest_path": "C:/Users/RainyDream_GameLabGr/Documents/UnrealEngine/VRCharacter/Config/SteamVRBindings/steamvr_manifest.json",
@@ -10,7 +10,7 @@
 			{
 				"en_us":
 				{
-					"name": "VRCharacter-14830424 [UE Editor]"
+					"name": "VRCharacter-15228867 [UE Editor]"
 				}
 			}
 		}
