@@ -46,7 +46,7 @@ void APickupActor::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 }
 
-void APickupActor::GrabPressed(USceneComponent* AttachTo)
+void APickupActor::GrabPressed(UVRHandMotionController* AttachTo)
 {
 	if(!bIsActiveForInteraction) {return;}
 	
@@ -54,11 +54,11 @@ void APickupActor::GrabPressed(USceneComponent* AttachTo)
 
 	if (bSnapToHand)
 	{
-		StaticMeshComponent->AttachToComponent(AttachTo, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
+		StaticMeshComponent->AttachToComponent(AttachTo->GrabSphere, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 	}
 	else
 	{
-		StaticMeshComponent->AttachToComponent(AttachTo, FAttachmentTransformRules::KeepWorldTransform);
+		StaticMeshComponent->AttachToComponent(AttachTo->GrabSphere, FAttachmentTransformRules::KeepWorldTransform);
 	}
 }
 

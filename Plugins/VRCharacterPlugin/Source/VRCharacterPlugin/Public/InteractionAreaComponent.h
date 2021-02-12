@@ -1,7 +1,6 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-
 #include "InteractableInterface.h"
 #include "Components/SphereComponent.h"
 #include "InteractionAreaComponent.generated.h"

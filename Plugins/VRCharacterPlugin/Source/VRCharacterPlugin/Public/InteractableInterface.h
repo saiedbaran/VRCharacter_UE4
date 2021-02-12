@@ -7,6 +7,8 @@
 #include "UObject/Interface.h"
 #include "InteractableInterface.generated.h"
 
+class UVRHandMotionController;
+
 UENUM()
 enum EGrabType
 {
@@ -30,7 +32,7 @@ class VRCHARACTERPLUGIN_API IInteractableInterface
 
 public:
 
-	virtual void GrabPressed(USceneComponent* AttachTo)
+	virtual void GrabPressed(UVRHandMotionController* AttachTo)
 	{
 	}
 

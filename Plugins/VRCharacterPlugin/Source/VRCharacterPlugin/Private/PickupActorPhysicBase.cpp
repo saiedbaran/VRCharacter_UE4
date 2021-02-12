@@ -24,14 +24,14 @@ void APickupActorPhysicBase::BeginPlay()
 	Super::BeginPlay();
 }
 
-void APickupActorPhysicBase::GrabPressed(USceneComponent* AttachTo)
+void APickupActorPhysicBase::GrabPressed(UVRHandMotionController* AttachTo)
 {
 	if(!bIsActiveForInteraction) {return;}
 	
 	if (bSnapToHand)
 	{
-		FVector AttachLocation = AttachTo->GetComponentLocation();
-		FRotator AttachRotation = AttachTo->GetComponentRotation();
+		FVector AttachLocation = AttachTo->GrabSphere->GetComponentLocation();
+		FRotator AttachRotation = AttachTo->GrabSphere->GetComponentRotation();
 
 		if (bUseCustomLocation)
 		{

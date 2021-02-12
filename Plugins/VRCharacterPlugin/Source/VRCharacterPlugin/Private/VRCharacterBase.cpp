@@ -104,7 +104,7 @@ void AVRCharacterBase::OnGrabRight()
 	if (RightHand->AttachedObject != nullptr)
 	{
 		RightHand->SetTypeOfGrab(RightHand->AttachedObject->GetGrabType());
-		RightHand->AttachedObject->GrabPressed(RightHand->GrabSphere);
+		RightHand->AttachedObject->GrabPressed(RightHand);
 		RightHand->GripState = GripClose;
 
 		if (RightHand->AttachedObject == LeftHand->AttachedObject)
@@ -156,7 +156,7 @@ void AVRCharacterBase::OnGrabLeft()
 	if (LeftHand->AttachedObject != nullptr)
 	{
 		LeftHand->SetTypeOfGrab(LeftHand->AttachedObject->GetGrabType());
-		LeftHand->AttachedObject->GrabPressed(LeftHand->GrabSphere);
+		LeftHand->AttachedObject->GrabPressed(LeftHand);
 		LeftHand->GripState = GripClose;
 
 		if (RightHand->AttachedObject == LeftHand->AttachedObject)
@@ -442,4 +442,11 @@ void AVRCharacterBase::BeginTeleport() const
     TeleportIndicator->GetComponentLocation() + GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * GetActorUpVector());
 
 	UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0)->StartCameraFade(1, 0, TeleportFadeDelay, CameraFadeColor);
+}
+
+USkeletalMeshComponent* AVRCharacterBase::GetHandSkeletalMesh(USceneComponent* AttachTo) const
+{
+	if(AttachTo == RightHand->GrabSphere){return RightHand->HandSkeletalMesh;}
+	else if(AttachTo == LeftHand->GrabSphere) {return LeftHand->HandSkeletalMesh;}
+	return nullptr;
 }

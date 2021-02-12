@@ -58,6 +58,8 @@ public:
 	void UpdateProjectileMesh(TArray<FVector> PathPoints);
 	void BeginTeleport() const;
 
+	USkeletalMeshComponent* GetHandSkeletalMesh(USceneComponent* AttachTo) const;
+
 protected:
 	virtual void BeginPlay() override;
 

@@ -3,7 +3,6 @@
 
 
 #include "VRCharacterPlugin/Public/LinearDriveActor.h"
-
 #include "VRCharacterStatics.h"
 #include "Components/SphereComponent.h"
 
@@ -75,18 +74,20 @@ void ALinearDriveActor::Tick(float DeltaTime)
 	}
 }
 
-void ALinearDriveActor::GrabPressed(USceneComponent* AttachTo)
+void ALinearDriveActor::GrabPressed(UVRHandMotionController* AttachTo)
 {
 	if(!bIsActiveForInteraction) {return;}
 	
 	bIsSliding = true;
-	ControllerComponent = AttachTo;
+	HandGrabSphere = AttachTo->GrabSphere;
+	HandSkeletalMesh = AttachTo->HandSkeletalMesh;
+	SetAttachToLocation();
 }
 
 void ALinearDriveActor::GrabReleased()
 {
 	bIsSliding = false;
-	ControllerComponent = nullptr;
+	HandGrabSphere = nullptr;
 }
 
 int ALinearDriveActor::GetGrabType()
@@ -105,8 +106,8 @@ void ALinearDriveActor::LocationInitialization()
 
 void ALinearDriveActor::SlidingAction()
 {
-	if(ControllerComponent == nullptr){return;}
-	const auto ProjectedLocation = ControllerComponent->GetComponentLocation().ProjectOnTo(SliderDirection);
+	if(HandGrabSphere == nullptr){return;}
+	const auto ProjectedLocation = HandGrabSphere->GetComponentLocation().ProjectOnTo(SliderDirection);
 	const auto DistanceToBegin = FVector::Distance(ProjectedLocation, InitialLocation.ProjectOnTo(SliderDirection));
 	const auto DistanceToEnd = FVector::Distance(ProjectedLocation, InitialGoal.ProjectOnTo(SliderDirection));
 	SlidingRatio = FMath::Clamp(DistanceToBegin / SlideDistance, 0.0f,1.0f);
@@ -119,9 +120,16 @@ void ALinearDriveActor::SlidingAction()
 	const auto UpdatedSliderLocation = InitialLocation + SlidingRatio * SlideDistance * SliderDirection;
 	BaseStaticMesh->SetWorldLocation(UpdatedSliderLocation);
 
-	if(FVector::Distance(ControllerComponent->GetComponentLocation(), CustomAttachPoint->GetComponentLocation()) > MaxDistanceToDetach)
+	if(FVector::Distance(HandGrabSphere->GetComponentLocation(), CustomAttachPoint->GetComponentLocation()) > MaxDistanceToDetach)
 	{
 		GrabReleased();
 	}
+}
+
+void ALinearDriveActor::SetAttachToLocation()
+{
+	if(!HandGrabSphere){return;}
+	
+	HandSkeletalMesh->SetWorldLocation(CustomAttachPoint->GetComponentLocation());
 }
 

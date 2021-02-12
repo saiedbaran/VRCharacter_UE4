@@ -72,10 +72,10 @@ void ASliderActor::Tick(float DeltaTime)
 	}
 }
 
-void ASliderActor::GrabPressed(USceneComponent* AttachTo)
+void ASliderActor::GrabPressed(UVRHandMotionController* AttachTo)
 {
 	bIsSliding = true;
-	ControllerComponent = AttachTo;
+	ControllerComponent = AttachTo->GrabSphere;
 }
 
 void ASliderActor::GrabReleased()

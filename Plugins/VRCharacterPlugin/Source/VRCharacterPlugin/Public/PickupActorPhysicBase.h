@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "PickupActor.h"
+#include "VRHandMotionController.h"
+
 #include "PickupActorPhysicBase.generated.h"
 
 class UPhysicsConstraintComponent;
@@ -19,6 +21,6 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	UPhysicsConstraintComponent* PhysicsConstraintComponent;
 
-	virtual void GrabPressed(USceneComponent* AttachTo) override;
+	virtual void GrabPressed(UVRHandMotionController* AttachTo) override;
 	virtual void GrabReleased() override;
 };

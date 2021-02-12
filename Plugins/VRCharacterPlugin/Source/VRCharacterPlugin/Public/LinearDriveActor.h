@@ -5,6 +5,7 @@
 
 #include "CoreMinimal.h"
 #include "InteractableInterface.h"
+#include "VRHandMotionController.h"
 #include "GameFramework/Actor.h"
 #include "LinearDriveActor.generated.h"
 
@@ -21,7 +22,7 @@ public:
 	ALinearDriveActor();
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void GrabPressed(USceneComponent* AttachTo) override;
+	virtual void GrabPressed(UVRHandMotionController* AttachTo) override;
 	virtual void GrabReleased() override;
 	virtual int GetGrabType() override;
 
@@ -33,9 +34,11 @@ protected:
 
 	FVector GetCustomAttachLocation() const;
 	FRotator GetCustomAttachRotation() const;
+	
 	void SlidingAction();
 
-
+	void SetAttachToLocation();
+	
 	// Members
 
 public:
@@ -74,7 +77,10 @@ public:
 	TEnumAsByte<EGrabType> TypeOfGrab;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
-	USceneComponent* ControllerComponent;
+	USceneComponent* HandGrabSphere;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	USkeletalMeshComponent* HandSkeletalMesh;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxDistanceToDetach = 100;

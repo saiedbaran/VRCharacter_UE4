@@ -6,6 +6,7 @@
 #include "CoreMinimal.h"
 
 #include "InteractableInterface.h"
+#include "VRHandMotionController.h"
 #include "GameFramework/Actor.h"
 #include "CircularDriveActor.generated.h"
 
@@ -20,7 +21,7 @@ public:
 	ACircularDriveActor();
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void GrabPressed(USceneComponent* AttachTo) override;
+	virtual void GrabPressed(UVRHandMotionController* AttachTo) override;
 	virtual void GrabReleased() override;
 	virtual int GetGrabType() override;
 
@@ -75,8 +76,11 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxDistanceToDetach = 100;
 
-	UPROPERTY(VisibleAnywhere, Category = "[Properties]: Debug")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Debug")
 	float RotationRatio = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Debug")
+	float CurrentRotation = 0;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug")
 	bool bIsRotating = false;
@@ -91,5 +95,6 @@ protected:
 	FVector InitialRotationPivot;
 	FVector BaseLocationVector;
 	FRotator InitialDriveRotation;
-	float CurrentRotation;
+	FVector InitialForwardAxis;
+	
 };

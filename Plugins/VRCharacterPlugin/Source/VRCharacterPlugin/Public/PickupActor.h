@@ -5,6 +5,7 @@
 
 #include "CoreMinimal.h"
 #include "InteractableInterface.h"
+#include "VRHandMotionController.h"
 #include "GameFramework/Actor.h"
 #include "PickupActor.generated.h"
 
@@ -20,7 +21,7 @@ public:
 	APickupActor();
 	virtual void Tick(float DeltaTime) override;
 
-	virtual void GrabPressed(USceneComponent* AttachTo) override;
+	virtual void GrabPressed(UVRHandMotionController* AttachTo) override;
 	virtual void GrabReleased() override;
 	virtual int GetGrabType() override;
 
