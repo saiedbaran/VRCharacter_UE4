@@ -12,6 +12,10 @@
 
 class UArrowComponent;
 class USphereComponent;
+
+DECLARE_EVENT(ACircularDirveActor, FHandleAction)
+DECLARE_EVENT(ACircularDirveActor, FHandleDeactivate)
+
 UCLASS()
 class VRCHARACTERPLUGIN_API ACircularDriveActor : public AActor, public IInteractableInterface
 {
@@ -32,6 +36,11 @@ protected:
 	virtual void BeginPlay() override;
 
 	void RotationAction();
+	bool CheckForHandleAction() const;
+	void ReactiveHandle();
+	void RotationLimitInitialization();
+	
+
 
 	// Members
 
@@ -42,6 +51,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxRotation = 90;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	float ActivateRotation = 80;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	float DeactivateRotation = 10;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	UArrowComponent* RotationAxis;
@@ -83,10 +98,16 @@ public:
 	float CurrentRotation = 0;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug")
+	bool bIsShowingDebug = false;
+	
+	UPROPERTY(VisibleAnywhere, Category = "[Properties]: Debug")
 	bool bIsRotating = false;
 
-	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug")
-	bool bIsShowingDebug = false;
+	UPROPERTY(VisibleAnywhere, Category = "[Properties]: Debug")
+	bool bIsActiveForAction = true;
+
+	FHandleAction OnHandleAction;
+	FHandleDeactivate OnHandleDeactivate;
 
 protected:
 
@@ -96,5 +117,6 @@ protected:
 	FVector BaseLocationVector;
 	FRotator InitialDriveRotation;
 	FVector InitialForwardAxis;
+
 	
 };
