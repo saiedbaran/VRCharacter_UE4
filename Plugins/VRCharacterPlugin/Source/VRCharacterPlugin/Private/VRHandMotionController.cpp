@@ -207,11 +207,29 @@ UPrimitiveComponent* UVRHandMotionController::GetNearestOverlappingComponent() c
 	return NearestInteractionArea;
 }
 
+void UVRHandMotionController::SetFixInteractionPose(UPrimitiveComponent* const interactionArea)
+{
+	InteractionAreaComponent = Cast<UInteractionAreaComponent>(interactionArea);
+	if (InteractionAreaComponent)
+	{
+		bIsTrackingHandPose = false;
+		if (InteractionAreaComponent->bDistanceBaseAnimation)
+		{
+			bTrackDistanceBaseGripStat = true;
+		}
+		SetTypeOfGrab(InteractionAreaComponent->TypeOfGrab);
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Red, TEXT("Cast failed"));
+	}
+}
+
 void UVRHandMotionController::GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                                      UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
                                                      bool bFromSweep, const FHitResult& SweepResult)
 {
-	auto Tags = OtherComp->ComponentTags;
+	/*auto Tags = OtherComp->ComponentTags;
 	for (auto Tag : Tags)
 	{
 		if (Tag == InteractionArea)
@@ -229,13 +247,45 @@ void UVRHandMotionController::GrabSphereOverlapEvent(UPrimitiveComponent* Overla
 				SetTypeOfGrab(InteractionAreaComponent->TypeOfGrab);
 			}
 		}
+	}*/
+
+	const auto interactionArea = GetNearestOverlappingComponent();
+	
+	if(interactionArea == nullptr)
+	{
+		bIsTrackingHandPose = true;
+		bTrackDistanceBaseGripStat = false;
+
+		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Black, TEXT("Clear Interaction Pose"));
 	}
+	else
+	{
+		SetFixInteractionPose(interactionArea);
+		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Blue, TEXT("Change Interaction Pose"));
+	}
+	
+	GEngine->AddOnScreenDebugMessage(-1,10, FColor::Green, TEXT("Set Interaction Pose"));
 }
 
 void UVRHandMotionController::GrabSphereEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	auto Tags = OtherComp->ComponentTags;
+	const auto interactionArea = GetNearestOverlappingComponent();
+
+	if(interactionArea == nullptr)
+	{
+		bIsTrackingHandPose = true;
+		bTrackDistanceBaseGripStat = false;
+
+		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Black, TEXT("Clear Interaction Pose"));
+	}
+	else
+	{
+		SetFixInteractionPose(interactionArea);
+		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Blue, TEXT("Change Interaction Pose"));
+	}
+	
+	/*auto Tags = OtherComp->ComponentTags;
 	for (auto Tag : Tags)
 	{
 		if (Tag == InteractionArea)
@@ -243,6 +293,5 @@ void UVRHandMotionController::GrabSphereEndOverlapEvent(UPrimitiveComponent* Ove
 			bIsTrackingHandPose = true;
 			bTrackDistanceBaseGripStat = false;
 		}
-	}
-	
+	}*/
 }

@@ -38,6 +38,7 @@ public:
 
 	void ChangePhysicalBehaviour(bool isCollisionEnabled, bool isSimulatingPhysics);
 	UPrimitiveComponent* GetNearestOverlappingComponent() const;
+	void SetFixInteractionPose(UPrimitiveComponent* interactionArea);
 
 	UFUNCTION()
 	void GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,

@@ -9,60 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0227b3fc-a7f7-4d9e-887d-9de1bb07e770" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_Hinge_Joint.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_Hinge_Joint1.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_Line_Physcics.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_PhysicalCircularDrive.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_PickupActorPhyicBase_Handle.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/Draft/BP_TriggerVolume.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor1_PBA.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Visual/MI_Highligh_Fresnel.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VRCharacter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Desk.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Desk.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Drawer_LinearDriveActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Drawer_LinearDriveActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Handle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Handle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_HandleBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_HandleBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_PickupActorPhyicBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Slider.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_Slider.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Blueprint/BP_VRCharacterBase.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Map/Default_P.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Button/MI_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Button/MI_Button.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Cylinder/MI_PBR_Cylinder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Cylinder/MI_PBR_Cylinder.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/DrivesDesk/MI_DrivesDesk.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/DrivesDesk/MI_DrivesDesk.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/GameLabNeon/MI_GameLabNeon.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/GameLabNeon/MI_GameLabNeon.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Handle/MI_Handle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Handle/MI_Handle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_LSP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_LSP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_Sphere.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/LSP/MI_Sphere.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/M_Substance_PBR.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/MI_Slider.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Slider/MI_Slider.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Sphere/MI_PBR_Sphere.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Material/Sphere/MI_PBR_Sphere.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Button/BP_Button.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Button/BP_Button.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Handle/HandleMesh_Triangulate_Cylinder_001.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/BasicObjects/Handle/HandleMesh_Triangulate_Cylinder_001.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/SK_Glove_Left.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/SK_Glove_Left.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/vr_glove_left_model_slim_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/SteamVR_Glove/vr_glove_left_model_slim_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_GearGloveP_Right.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_GearGloveP_Right.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_Glove_Left_001_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_Glove_Left_001_Skeleton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_Glove_Right_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Content/VRCharacterPlugin/Model/VR_Hand_Physical/SK_Glove_Right_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/CircularDriveActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/CircularDriveActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/LinearDriveActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/LinearDriveActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/PickupActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/SliderActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/SliderActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRCharacterBase.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Private/VRHandMotionController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/CircularDriveActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/CircularDriveActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/LinearDriveActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/LinearDriveActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/PickupActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/SliderActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/SliderActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRCharacterStatics.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/Source/VRCharacterPlugin/Public/VRHandMotionController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/VRCharacter_Collision.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/VRCharacterPlugin/VRCharacter_Collision.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -518,7 +468,7 @@
       <workItem from="1613392379697" duration="6142000" />
       <workItem from="1616665092858" duration="5918000" />
       <workItem from="1617098757229" duration="8327000" />
-      <workItem from="1617175768320" duration="664000" />
+      <workItem from="1617175768320" duration="1696000" />
     </task>
     <servers />
   </component>
