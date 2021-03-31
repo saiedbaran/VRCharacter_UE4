@@ -36,6 +36,8 @@ public:
 	float GetGripStat() const;
 	int GetTypeOfGrab() const;
 
+	void ChangePhysicalBehaviour(bool isCollisionEnabled, bool isSimulatingPhysics);
+	UPrimitiveComponent* GetNearestOverlappingComponent() const;
 
 	UFUNCTION()
 	void GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,

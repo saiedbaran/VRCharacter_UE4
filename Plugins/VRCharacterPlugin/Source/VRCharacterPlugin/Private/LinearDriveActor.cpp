@@ -45,6 +45,12 @@ ALinearDriveActor::ALinearDriveActor()
 	CustomAttachPoint->SetCollisionResponseToAllChannels(ECR_Ignore);
 	CustomAttachPoint->ShapeColor = FColor::Black;
 	CustomAttachPoint->SetHiddenInGame(true);
+
+	HighlightMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Highlight");
+	HighlightMeshComponent->SetupAttachment(BaseStaticMesh);
+	
+	BaseStaticMesh->OnComponentEndOverlap.AddDynamic(this, &ALinearDriveActor::StaticMeshEndOverlapped);
+	BaseStaticMesh->OnComponentBeginOverlap.AddDynamic(this, &ALinearDriveActor::StaticMeshBeginOverlapped);
 }
 
 void ALinearDriveActor::BeginPlay()
@@ -52,6 +58,16 @@ void ALinearDriveActor::BeginPlay()
 	Super::BeginPlay();
 
 	LocationInitialization();
+
+	GenerateHighlightMesh();
+}
+
+void ALinearDriveActor::GenerateHighlightMesh() const
+{
+	HighlightMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	HighlightMeshComponent->SetStaticMesh(BaseStaticMesh->GetStaticMesh());
+	HighlightMeshComponent->SetMaterial(0,HighlightMaterial);
+	HighlightMeshComponent->SetVisibility(false);
 }
 
 FVector ALinearDriveActor::GetCustomAttachLocation() const
@@ -78,6 +94,8 @@ void ALinearDriveActor::GrabPressed(UVRHandMotionController* AttachTo)
 {
 	if(!bIsActiveForInteraction) {return;}
 	
+	ToggleHighlight(false);
+	
 	bIsSliding = true;
 	HandGrabSphere = AttachTo->GrabSphere;
 	HandSkeletalMesh = AttachTo->HandSkeletalMesh;
@@ -102,6 +120,30 @@ void ALinearDriveActor::LocationInitialization()
 
 	SlideDistance = FVector::Distance(InitialLocation,InitialGoal);
 	SliderDirection = (InitialGoal - InitialLocation).GetSafeNormal();
+}
+
+void ALinearDriveActor::ToggleHighlight(bool bIsActivatingHighlight) const
+{
+	if(!bHasHighlight) {return;}
+	HighlightMeshComponent->SetVisibility(bIsActivatingHighlight);
+}
+
+void ALinearDriveActor::StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+                                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if(OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		HighlightMeshComponent->SetVisibility(true);
+	}
+}
+
+void ALinearDriveActor::StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if(OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		HighlightMeshComponent->SetVisibility(false);
+	}
 }
 
 void ALinearDriveActor::SlidingAction()

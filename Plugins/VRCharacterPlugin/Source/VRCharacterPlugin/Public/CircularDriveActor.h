@@ -32,6 +32,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void LocationInitialization();
 
+	void ToggleHighlight(bool bIsActivatingHighlight) const;
+	void GenerateHighlightMesh() const;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -39,7 +42,14 @@ protected:
 	bool CheckForHandleAction() const;
 	void ReactiveHandle();
 	void RotationLimitInitialization();
-	
+
+	UFUNCTION()
+void StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+                               int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+    void StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+                                 int32 OtherBodyIndex);
 
 
 	// Members
@@ -48,6 +58,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* BaseStaticMesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UStaticMeshComponent* HighlightMeshComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UMaterialInstance* HighlightMaterial;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	bool bHasHighlight;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxRotation = 90;

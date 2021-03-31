@@ -42,6 +42,12 @@ ACircularDriveActor::ACircularDriveActor()
 	RotationAxis = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationAxis"));
 	RotationAxis->SetupAttachment(BaseStaticMesh);
 	RotationAxis->SetHiddenInGame(true);
+
+	HighlightMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Highlight");
+	HighlightMeshComponent->SetupAttachment(BaseStaticMesh);
+
+	BaseStaticMesh->OnComponentEndOverlap.AddDynamic(this, &ACircularDriveActor::StaticMeshEndOverlapped);
+	BaseStaticMesh->OnComponentBeginOverlap.AddDynamic(this, &ACircularDriveActor::StaticMeshBeginOverlapped);
 }
 
 void ACircularDriveActor::BeginPlay()
@@ -50,12 +56,16 @@ void ACircularDriveActor::BeginPlay()
 
 	LocationInitialization();
 	RotationLimitInitialization();
+
+	GenerateHighlightMesh();
 }
 
 void ACircularDriveActor::RotationAction()
 {
 	if (ControllerComponent == nullptr) { return; }
 
+	ToggleHighlight(false);
+	
 	const auto ProjectedLocation = FVector::PointPlaneProject(ControllerComponent->GetComponentLocation(),
 	                                                          InitialRotationPivot,
 	                                                          InitialRotationAxis);
@@ -107,6 +117,25 @@ void ACircularDriveActor::RotationLimitInitialization()
 	if (DeactivateRotation < 1) { DeactivateRotation = 1; }
 }
 
+void ACircularDriveActor::StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+                                                    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+                                                    bool bFromSweep, const FHitResult& SweepResult)
+{
+	if (OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		HighlightMeshComponent->SetVisibility(true);
+	}
+}
+
+void ACircularDriveActor::StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+                                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		HighlightMeshComponent->SetVisibility(false);
+	}
+}
+
 void ACircularDriveActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -153,4 +182,18 @@ void ACircularDriveActor::LocationInitialization()
 	BaseLocationVector = InitialRotationBegin - InitialRotationPivot;
 	InitialDriveRotation = BaseStaticMesh->GetComponentRotation();
 	InitialForwardAxis = BaseStaticMesh->GetForwardVector();
+}
+
+void ACircularDriveActor::ToggleHighlight(bool bIsActivatingHighlight) const
+{
+	if (!bHasHighlight) { return; }
+	HighlightMeshComponent->SetVisibility(bIsActivatingHighlight);
+}
+
+void ACircularDriveActor::GenerateHighlightMesh() const
+{
+	HighlightMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	HighlightMeshComponent->SetStaticMesh(BaseStaticMesh->GetStaticMesh());
+	HighlightMeshComponent->SetMaterial(0, HighlightMaterial);
+	HighlightMeshComponent->SetVisibility(false);
 }

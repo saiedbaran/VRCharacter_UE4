@@ -51,22 +51,29 @@ ASliderActor::ASliderActor()
 	CustomAttachPoint->SetCollisionResponseToAllChannels(ECR_Ignore);
 	CustomAttachPoint->ShapeColor = FColor::Black;
 	CustomAttachPoint->SetHiddenInGame(true);
+
+	HighlightMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Highlight");
+	HighlightMeshComponent->SetupAttachment(HandleStaticMesh);
+	
+	HandleStaticMesh->OnComponentEndOverlap.AddDynamic(this, &ASliderActor::StaticMeshEndOverlapped);
+	HandleStaticMesh->OnComponentBeginOverlap.AddDynamic(this, &ASliderActor::StaticMeshBeginOverlapped);
 }
 
 void ASliderActor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	SlideDistance = FVector::Distance(EndPoint->GetComponentLocation(),BeginPoint->GetComponentLocation());
+	SlideDistance = FVector::Distance(EndPoint->GetComponentLocation(), BeginPoint->GetComponentLocation());
 	SliderDirection = (EndPoint->GetComponentLocation() - BeginPoint->GetComponentLocation()).GetSafeNormal();
-
+	
+	GenerateHighlightMesh();
 }
 
 void ASliderActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if(bIsSliding)
+	if (bIsSliding)
 	{
 		SlidingAction();
 	}
@@ -89,6 +96,20 @@ int ASliderActor::GetGrabType()
 	return TypeOfGrab;
 }
 
+void ASliderActor::ToggleHighlight(bool bIsActivatingHighlight) const
+{
+	if (!bHasHighlight) { return; }
+	HighlightMeshComponent->SetVisibility(bIsActivatingHighlight);
+}
+
+void ASliderActor::GenerateHighlightMesh() const
+{
+	HighlightMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	HighlightMeshComponent->SetStaticMesh(HandleStaticMesh->GetStaticMesh());
+	HighlightMeshComponent->SetMaterial(0, HighlightMaterial);
+	HighlightMeshComponent->SetVisibility(false);
+}
+
 FVector ASliderActor::GetCustomAttachLocation() const
 {
 	return CustomAttachPoint->GetComponentLocation();
@@ -101,22 +122,49 @@ FRotator ASliderActor::GetCustomAttachRotation() const
 
 void ASliderActor::SlidingAction()
 {
-	if(ControllerComponent == nullptr){return;}
+	if (ControllerComponent == nullptr) { return; }
+
+	ToggleHighlight(false);
+	
 	const auto ProjectedLocation = ControllerComponent->GetComponentLocation().ProjectOnTo(SliderDirection);
-	const auto DistanceToBegin = FVector::Distance(ProjectedLocation, BeginPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
-	const auto DistanceToEnd = FVector::Distance(ProjectedLocation, EndPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
-	SlidingRatio = FMath::Clamp(DistanceToBegin / SlideDistance, 0.0f,1.0f);
-	if(DistanceToEnd > SlideDistance || DistanceToBegin > SlideDistance)
+	const auto DistanceToBegin = FVector::Distance(ProjectedLocation,
+	                                               BeginPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
+	const auto DistanceToEnd = FVector::Distance(ProjectedLocation,
+	                                             EndPoint->GetComponentLocation().ProjectOnTo(SliderDirection));
+	SlidingRatio = FMath::Clamp(DistanceToBegin / SlideDistance, 0.0f, 1.0f);
+	if (DistanceToEnd > SlideDistance || DistanceToBegin > SlideDistance)
 	{
-		if(DistanceToEnd > DistanceToBegin){ SlidingRatio = 0;}
-		else{SlidingRatio = 1;}
+		if (DistanceToEnd > DistanceToBegin) { SlidingRatio = 0; }
+		else { SlidingRatio = 1; }
 	}
 
-	const auto UpdatedSliderLocation = BeginPoint->GetComponentLocation() + SlidingRatio * SlideDistance * SliderDirection;
+	const auto UpdatedSliderLocation = BeginPoint->GetComponentLocation() + SlidingRatio * SlideDistance *
+		SliderDirection;
 	HandleStaticMesh->SetWorldLocation(UpdatedSliderLocation);
 
-	if(FVector::Distance(ControllerComponent->GetComponentLocation(), HandleStaticMesh->GetComponentLocation()) > MaxDistanceToDetach)
+	if (FVector::Distance(ControllerComponent->GetComponentLocation(), HandleStaticMesh->GetComponentLocation()) >
+		MaxDistanceToDetach)
 	{
 		GrabReleased();
+	}
+}
+
+void ASliderActor::StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+                                             UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+                                             const FHitResult& SweepResult)
+{
+	if (OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		HighlightMeshComponent->SetVisibility(true);
+	}
+}
+
+void ASliderActor::StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+                                           UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if (OtherComp->ComponentTags.Contains(TEXT("GrabSphere")))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10, FColor::Red, FString::Printf(TEXT("Component End Overlaps")));
+		HighlightMeshComponent->SetVisibility(false);
 	}
 }

@@ -52,7 +52,7 @@ public:
 
 	void UpdateDestinationMarker();
 	bool UpdateProjectilePath(FPredictProjectilePathParams& PathParams, FPredictProjectilePathResult& PathResult,
-                              FVector StartPos, FVector LaunchVelocityVector) const;
+	                          FVector StartPos, FVector LaunchVelocityVector) const;
 	void UpdateProjectileSpline(TArray<FVector> PathPoints) const;
 	void ClearProjectilePool();
 	void UpdateProjectileMesh(TArray<FVector> PathPoints);
@@ -62,6 +62,12 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void RightHandBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+	                               int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	void LeftHandBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+                               int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 private:
 
@@ -82,7 +88,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Feature] components")
 	UVRHandMotionController* LeftHand;
-	
+
 protected:
 
 	UPROPERTY(EditAnywhere, Category = "[Feature] Debug")
@@ -91,7 +97,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "[Feature] Debug")
 	bool bDebugGrabAction = false;
 
-	UPROPERTY(EditAnywhere,  Category = "[Feature] Debug")
+	UPROPERTY(EditAnywhere, Category = "[Feature] Debug")
 	bool bDebugHandPose = false;
 
 	UPROPERTY(EditAnywhere, Category = "[Feature]: Debug")
@@ -145,7 +151,6 @@ protected:
 	UPROPERTY(VisibleAnywhere, Category = "[Feature]: Teleportation")
 	TArray<class USplineMeshComponent*> ProjectileMeshPool;
 
-	
 
 private:
 
@@ -153,7 +158,4 @@ private:
 	bool bIsUpdatingTeleportDestination = false;
 	bool bIsDestinationFound = false;
 	bool bIsRightHandDoTeleportation = true;
-
-
-
 };

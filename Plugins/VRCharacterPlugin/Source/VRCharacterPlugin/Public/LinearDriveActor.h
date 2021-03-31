@@ -28,17 +28,28 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void LocationInitialization();
+
+	void ToggleHighlight(bool bIsActivatingHighlight) const;
+	void GenerateHighlightMesh() const;
 	
 protected:
 	virtual void BeginPlay() override;
 
 	FVector GetCustomAttachLocation() const;
 	FRotator GetCustomAttachRotation() const;
-	
+
 	void SlidingAction();
 
 	void SetAttachToLocation();
-	
+
+	UFUNCTION()
+	void StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+	                               int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+	                             int32 OtherBodyIndex);
+
 	// Members
 
 public:
@@ -51,6 +62,15 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* EndPoint;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UStaticMeshComponent* HighlightMeshComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UMaterialInstance* HighlightMaterial;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	bool bHasHighlight;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* CustomAttachPoint;
@@ -81,19 +101,21 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USkeletalMeshComponent* HandSkeletalMesh;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxDistanceToDetach = 100;
 
 	UPROPERTY(EditAnywhere, Category = "[Properties]: Debug", meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0",
-        UIMax = "1.0"))
+		UIMax = "1.0"))
 	float SlidingRatio = 0;
 
 protected:
 
 	FVector InitialLocation;
-	FVector InitialGoal;	
+	FVector InitialGoal;
 	FVector SliderDirection;
 	float SlideDistance;
 	bool bIsSliding = false;
 };
+
+

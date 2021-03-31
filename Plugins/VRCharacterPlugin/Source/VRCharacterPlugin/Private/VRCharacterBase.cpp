@@ -35,6 +35,9 @@ AVRCharacterBase::AVRCharacterBase()
 	LeftHand = CreateDefaultSubobject<UVRHandMotionController>("LeftHand");
 	LeftHand->SetupAttachment(VROffset);
 	LeftHand->MotionController->MotionSource = FName("Left");
+
+	RightHand->GrabSphere->OnComponentBeginOverlap.AddDynamic(this, &AVRCharacterBase::RightHandBeginOverlapped);
+	LeftHand->GrabSphere->OnComponentBeginOverlap.AddDynamic(this, &AVRCharacterBase::LeftHandBeginOverlapped);
 }
 
 void AVRCharacterBase::BeginPlay()
@@ -48,6 +51,18 @@ void AVRCharacterBase::BeginPlay()
 	}
 
 	TeleportIndicator->SetVisibility(false);
+}
+
+void AVRCharacterBase::RightHandBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	
+}
+
+void AVRCharacterBase::LeftHandBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	
 }
 
 void AVRCharacterBase::Tick(float DeltaTime)
@@ -105,6 +120,7 @@ void AVRCharacterBase::OnGrabRight()
 	{
 		RightHand->SetTypeOfGrab(RightHand->AttachedObject->GetGrabType());
 		RightHand->AttachedObject->GrabPressed(RightHand);
+		RightHand->ChangePhysicalBehaviour(false, true);
 		RightHand->GripState = GripClose;
 
 		if (RightHand->AttachedObject == LeftHand->AttachedObject)
@@ -172,6 +188,7 @@ void AVRCharacterBase::OnReleaseRight()
 	if (RightHand->AttachedObject == nullptr) { return; }
 
 	RightHand->AttachedObject->GrabReleased();
+	RightHand->ChangePhysicalBehaviour(true, true);
 	RightHand->AttachedObject = nullptr;
 	RightHand->bIsTrackingHandPose = true;
 

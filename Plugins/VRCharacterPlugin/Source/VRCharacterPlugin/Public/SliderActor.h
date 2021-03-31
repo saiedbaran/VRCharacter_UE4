@@ -24,6 +24,9 @@ public:
 	virtual void GrabReleased() override;
 	virtual int GetGrabType() override;
 
+	void ToggleHighlight(bool bIsActivatingHighlight) const;
+	void GenerateHighlightMesh() const;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -31,6 +34,14 @@ protected:
 	FRotator GetCustomAttachRotation() const;
 
 	void SlidingAction();
+
+	UFUNCTION()
+	void StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+	                               int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
+	                             int32 OtherBodyIndex);
 
 	//Members
 public:
@@ -48,6 +59,15 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* EndPoint;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UStaticMeshComponent* HighlightMeshComponent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UMaterialInstance* HighlightMaterial;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
+	bool bHasHighlight;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USphereComponent* CustomAttachPoint;
@@ -72,7 +92,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	USceneComponent* ControllerComponent;
-	
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "[Properties]: Attach Behaviour")
 	float MaxDistanceToDetach = 100;
 
@@ -80,7 +100,6 @@ protected:
 		UIMax = "1.0"))
 	float SlidingRatio = 0;
 
-	
 
 private:
 

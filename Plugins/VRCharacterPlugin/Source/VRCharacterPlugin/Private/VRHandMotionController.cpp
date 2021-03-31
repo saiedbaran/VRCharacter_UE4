@@ -51,6 +51,7 @@ UVRHandMotionController::UVRHandMotionController()
 	GrabSphere->SetCollisionResponseToAllChannels(ECR_Ignore);
 	GrabSphere->SetCollisionResponseToChannel(ECC_Grabbable, ECR_Overlap);
 	GrabSphere->SetHiddenInGame(true);
+	GrabSphere->ComponentTags.Add(TEXT("GrabSphere"));
 
 	ArchDirection = CreateDefaultSubobject<UArrowComponent>(
 		*FString::Printf(TEXT("ArchDirection %s"), *this->GetName()));
@@ -84,6 +85,11 @@ void UVRHandMotionController::Initialization()
 
 	HandPivot->SetSimulatePhysics(false);
 	HandSkeletalMesh->SetSimulatePhysics(true);
+	HandSkeletalMesh->SetCollisionObjectType(ECC_VRCharacter);
+	HandSkeletalMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	HandSkeletalMesh->SetGenerateOverlapEvents(true);
+	HandSkeletalMesh->SetNotifyRigidBodyCollision(true);
+
 
 	SetupPhysicsConstraint();
 
@@ -166,6 +172,39 @@ float UVRHandMotionController::GetGripStat() const
 int UVRHandMotionController::GetTypeOfGrab() const
 {
 	return TypeOfGrab;
+}
+
+void UVRHandMotionController::ChangePhysicalBehaviour(bool isCollisionEnabled, bool isSimulatingPhysics)
+{
+	if(isCollisionEnabled){HandSkeletalMesh->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);}
+	else {HandSkeletalMesh->SetCollisionEnabled(ECollisionEnabled::QueryOnly);}
+	
+	//HandSkeletalMesh->SetSimulatePhysics(isSimulatingPhysics);
+}
+
+UPrimitiveComponent* UVRHandMotionController::GetNearestOverlappingComponent() const
+{
+	UPrimitiveComponent* NearestInteractionArea = nullptr;
+	TArray<UPrimitiveComponent*> OverlappingComponents;
+
+	GrabSphere->GetOverlappingComponents(OverlappingComponents);
+
+	float ShortestDistance = TNumericLimits<float>::Max();
+	for (auto Component : OverlappingComponents)
+	{
+		if (Component->ComponentTags.Contains(InteractionArea))
+		{
+			const auto Distance = FVector::Distance(GrabSphere->GetComponentLocation(),
+                                                    Component->GetComponentLocation());
+			if (Distance < ShortestDistance)
+			{
+				ShortestDistance = Distance;
+				NearestInteractionArea = Component;
+			}
+		}
+	}
+
+	return NearestInteractionArea;
 }
 
 void UVRHandMotionController::GrabSphereOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
