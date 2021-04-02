@@ -82,6 +82,7 @@ void APickupActor::GrabPressed(UVRHandMotionController* AttachTo)
 void APickupActor::GrabReleased()
 {
 	StaticMeshComponent->SetSimulatePhysics(true);
+	OnPickupReleaseEvent();
 }
 
 int APickupActor::GetGrabType()

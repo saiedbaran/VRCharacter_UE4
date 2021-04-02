@@ -255,16 +255,12 @@ void UVRHandMotionController::GrabSphereOverlapEvent(UPrimitiveComponent* Overla
 	{
 		bIsTrackingHandPose = true;
 		bTrackDistanceBaseGripStat = false;
-
-		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Black, TEXT("Clear Interaction Pose"));
 	}
 	else
 	{
 		SetFixInteractionPose(interactionArea);
-		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Blue, TEXT("Change Interaction Pose"));
 	}
 	
-	GEngine->AddOnScreenDebugMessage(-1,10, FColor::Green, TEXT("Set Interaction Pose"));
 }
 
 void UVRHandMotionController::GrabSphereEndOverlapEvent(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
@@ -276,13 +272,10 @@ void UVRHandMotionController::GrabSphereEndOverlapEvent(UPrimitiveComponent* Ove
 	{
 		bIsTrackingHandPose = true;
 		bTrackDistanceBaseGripStat = false;
-
-		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Black, TEXT("Clear Interaction Pose"));
 	}
 	else
 	{
 		SetFixInteractionPose(interactionArea);
-		GEngine->AddOnScreenDebugMessage(-1,10, FColor::Blue, TEXT("Change Interaction Pose"));
 	}
 	
 	/*auto Tags = OtherComp->ComponentTags;
