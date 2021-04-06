@@ -37,6 +37,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnPickupReleaseEvent();
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnPickupGrabEvent();
+
 	UFUNCTION()
 	void StaticMeshBeginOverlapped(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,	int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 

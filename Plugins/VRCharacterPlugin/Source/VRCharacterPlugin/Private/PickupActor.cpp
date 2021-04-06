@@ -6,14 +6,6 @@
 #include "Components/SphereComponent.h"
 
 
-void APickupActor::GenerateHighlightMesh()
-{
-	HighlightMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	HighlightMeshComponent->SetStaticMesh(StaticMeshComponent->GetStaticMesh());
-	HighlightMeshComponent->SetMaterial(0,HighlightMaterial);
-	HighlightMeshComponent->SetVisibility(false);
-}
-
 // Sets default values
 APickupActor::APickupActor()
 {
@@ -77,6 +69,8 @@ void APickupActor::GrabPressed(UVRHandMotionController* AttachTo)
 	{
 		StaticMeshComponent->AttachToComponent(AttachTo->GrabSphere, FAttachmentTransformRules::KeepWorldTransform);
 	}
+	
+	OnPickupGrabEvent();
 }
 
 void APickupActor::GrabReleased()
@@ -123,4 +117,13 @@ void APickupActor::StaticMeshEndOverlapped(UPrimitiveComponent* OverlappedComp, 
 		HighlightMeshComponent->SetVisibility(false);
 	}
 }
+
+void APickupActor::GenerateHighlightMesh()
+{
+	HighlightMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	HighlightMeshComponent->SetStaticMesh(StaticMeshComponent->GetStaticMesh());
+	HighlightMeshComponent->SetMaterial(0,HighlightMaterial);
+	HighlightMeshComponent->SetVisibility(false);
+}
+
 
